@@ -1,15 +1,4 @@
 // Copyright 2021 NNTU-CS
-int sort(int *arr, int len) {
-for (int i = 0; i < len; i++) {
-        for (int j = len - i; j > i; j++) {
-                if (arr[j - 1] > arr[j]) {
-                        int tmp = arr[j - 1];
-                        arr[j - 1] = arr[j];
-                        arr[j] = tmp;
-                }
-        }
-}
-}
 int countPairs1(int *arr, int len, int value) {
         int count = 0;
         for (int i = 0; i < len; i++) {
