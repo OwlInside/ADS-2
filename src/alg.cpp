@@ -1,7 +1,7 @@
 // Copyright 2021 NNTU-CS
 int sort(int *arr, int len) {
 for (int i = 0; i < len; i++) {
-        for (int j = (len - i); j > i; j++) {
+        for (int j = len - i; j > i; j++) {
                 if (arr[j - 1] > arr[j]) {
                         int tmp = arr[j - 1];
                         arr[j - 1] = arr[j];
@@ -10,19 +10,6 @@ for (int i = 0; i < len; i++) {
         }
 }
 }
-int binsearch(int *arr, int r, int l, int x) {
-        if (r >= l) {
-                int midd = l + (r - l) / 2;
-                    if (arr midd == x) {
-                            return midd;
-                    }
-        }
-        if (arr[midd] > x) 
-                return binsearch(arr, l, midd - 1, x);
-        else
-                return binseach(arr, r, midd + 1, x);
-}
-        
 int countPairs1(int *arr, int len, int value) {
         int count = 0;
         for (int i = 0; i < len; i++) {
