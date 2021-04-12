@@ -12,15 +12,15 @@ for (int i = 0; i < len; i++) {
 }
 int binsearch(int *arr, int r, int l, int x) {
         if (r >= l) {
-                int midd = l + (r - l) / 2
+                int midd = l + (r - l) / 2;
                     if (arr midd == x) {
                             return midd;
                     }
         }
         if (arr[midd] > x) 
-                return binsearch(*arr, l, midd - 1, x);
+                return binsearch(arr, l, midd - 1, x);
         else
-                return binseach(*arr, r, midd + 1, x);
+                return binseach(arr, r, midd + 1, x);
 }
         
 int countPairs1(int *arr, int len, int value) {
