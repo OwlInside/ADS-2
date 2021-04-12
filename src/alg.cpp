@@ -41,13 +41,29 @@ int countPairs2(int *arr, int len, int value) {
 }
 
 int countPairs3(int *arr, int len, int value) {
-        int count = 0, l = 0, r = len - 1;
-        while (arr[r] > value) {
-                r--;
+        int count = 0;
+        for (int i=0; i < len - 1; i++){
+                int l = i + 1, r = len;
+                while (l < r) {
+                        int midd = (l + r) / 2;
+                        if (arr[midd] == (value - arr[i])) {
+                                while (arr[midd - 1] == (value - arr[i])) {
+                                        midd--;
+                                }
+                                while (arr[midd] == (value - arr[i])) {
+                                        midd++;
+                                        count++;
+                                }
+                                break;
+                        }
+                        else if (arr[midd] > (value - arr[i])) {
+                                r = midd;
+                        }
+                        else {
+                                l = midd + 1;
+                        }
+                }
         }
-        while (l != r) {
-                count += binsearch(arr, len, value - arr[l], l + 1);
-                l++;
-        }
+}
   return count;
 }
